@@ -13,6 +13,17 @@ pipeline {
         sh 'npm run unit-test'
       }
     }
+    stage('Integration-test') {
+      when {
+        anyof {
+          branch 'main'
+          branch 'develop'
+        }
+      }
+      steps {
+        echo 'Running integration test...'
+        sh 'npm run integration-test'
+      }
+    }
   }
-}
-    
+} 
