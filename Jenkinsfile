@@ -6,10 +6,12 @@ pipeline {
         npm install
       }
     }
-    stage('Test') {
+    stage('Unit test') {
       steps {
         npm run unit-test
       }
+    }
+    stage('Integration-test') {
       steps {
         npm run integration-test
       }
