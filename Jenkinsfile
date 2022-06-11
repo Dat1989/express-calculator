@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Integration-test') {
       when {
-        anyof {
+        anyOf {
           branch 'main'
           branch 'develop'
         }
