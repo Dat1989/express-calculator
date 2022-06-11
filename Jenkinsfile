@@ -13,12 +13,6 @@ pipeline {
         sh 'npm run unit-test'
       }
     }
-    stage('Integration-test') {
-      steps {
-        echo 'Running integration test...'
-        sh 'npm run integration-test'
-      }
-    }
   }
 }
     
