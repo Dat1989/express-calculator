@@ -3,17 +3,20 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        npm install
+        echo 'Installing...'
+        sh 'npm install'
       }
     }
     stage('Unit test') {
       steps {
-        npm run unit-test
+        echo 'Running unit test...'
+        sh 'npm run unit-test'
       }
     }
     stage('Integration-test') {
       steps {
-        npm run integration-test
+        echo 'Running integration test...'
+        sh 'npm run integration-test'
       }
     }
   }
