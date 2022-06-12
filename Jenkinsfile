@@ -30,9 +30,11 @@ pipeline {
         branch 'main'
       }
       steps {
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-          def image = docker.build("Dat1989/express-calculator")
-          image.push()
+        script {
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+            def image = docker.build("Dat1989/express-calculator")
+            image.push("$BUILD_ID")
+          }
         }
       }  
     }
