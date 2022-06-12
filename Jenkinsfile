@@ -32,7 +32,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            def image = docker.build("Dat1989/express-calculator")
+            def image = docker.build("dat1989/express-calculator")
             image.push("$BUILD_ID")
           }
         }
