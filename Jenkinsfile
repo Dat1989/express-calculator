@@ -29,10 +29,12 @@ pipeline {
       when {
         branch 'main'
       }
-      docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-        def image = docker.build("Dat1989/express-calculator")
-        image.push()
-      }
+      steps {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+          def image = docker.build("Dat1989/express-calculator")
+          image.push()
+        }
+      }  
     }
   }
 } 
