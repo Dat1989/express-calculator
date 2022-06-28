@@ -25,7 +25,7 @@ pipeline {
         sh 'npm run integration-test'
       }
     }
-    stage('Delivery') {
+    stage('Delivery-Redovisning') {
       when {
         branch 'main'
       }
